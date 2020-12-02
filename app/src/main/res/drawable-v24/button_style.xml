@@ -4,8 +4,8 @@
     <ripple android:color="?attr/colorControlHighlight">
         <item>
             <shape android:shape="rectangle"
-                android:tint="#FD8545">
-                <corners android:radius="15dp"/>
+                android:tint="#0D47A1">
+                <corners android:radius="150dp"/>
                 <solid android:color="#666666"/>
 
                 <padding android:bottom="6dp"/>
