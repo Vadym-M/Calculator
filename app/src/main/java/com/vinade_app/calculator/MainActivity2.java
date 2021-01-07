@@ -15,15 +15,13 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Button tekstBtn = findViewById(R.id.button);
-        final TextView pole =  findViewById(R.id.TextField);
+        final TextView Wynik =  findViewById(R.id.Wynik);
 
         tekstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pole.setText("cat");
+                Wynik.setText("");
             }
         });
     }
-
-
 }
