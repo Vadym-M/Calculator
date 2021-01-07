@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -20,7 +21,17 @@ public class MainActivity2 extends AppCompatActivity {
         tekstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Wynik.setText("");
+
+                EditText WagaPole= findViewById(R.id.Waga);
+                String WagaString=WagaPole.getText().toString();
+
+                EditText MililitryPole = findViewById(R.id.Mililitry);
+                String MililitryString = MililitryPole.getText().toString();
+
+                Integer Mililitry = Integer.parseInt(MililitryString);
+                Integer Waga = Integer.parseInt(WagaString);
+
+                Wynik.setText(Mililitry*Waga);
             }
         });
     }
