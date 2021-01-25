@@ -249,7 +249,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn3" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/nextPage"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -269,8 +269,8 @@
         android:text="0"
         android:textSize="0dp"
         android:onClick="onNumberClick"
-        app:layout_constraintStart_toEndOf="@+id/button17"
-        app:layout_constraintTop_toTopOf="@+id/button17" />
+        app:layout_constraintStart_toEndOf="@+id/nextPage"
+        app:layout_constraintTop_toTopOf="@+id/nextPage" />
 
     <Button
         android:id="@+id/btnDot"
