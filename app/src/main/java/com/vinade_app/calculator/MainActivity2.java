@@ -32,6 +32,10 @@ public class MainActivity2 extends AppCompatActivity {
                 Integer Waga = Integer.parseInt(WagaString);
 
                 Wynik.setText(Mililitry*Waga);
+
+
+                nie wiem nie wiem
+
             }
         });
     }
