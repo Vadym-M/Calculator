@@ -11,23 +11,22 @@
         android:id="@+id/numberField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/resultField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/operationField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="180dp"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,10 +37,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/operationField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <Button
         android:id="@+id/btnAC"
@@ -50,9 +49,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/style_for_ac"
+        android:onClick="onOperationClick"
         android:text="AC"
         android:textSize="0dp"
-        android:onClick="onOperationClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operationField" />
 
@@ -99,11 +98,11 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/style_for_7"
+        android:onClick="onNumberClick"
         android:text="7"
         android:textSize="0dp"
-        android:onClick="onNumberClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAC" />
 
@@ -150,11 +149,11 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/style_for_4"
+        android:onClick="onNumberClick"
         android:text="4"
         android:textSize="0dp"
-        android:onClick="onNumberClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn7" />
 
@@ -201,11 +200,11 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/style_for_1"
+        android:onClick="onNumberClick"
         android:text="1"
         android:textSize="0dp"
-        android:onClick="onNumberClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4" />
 
@@ -254,6 +253,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -290,13 +290,17 @@
         android:layout_height="60dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/style_for_eq"
+        android:onClick="onOperationClick"
         android:text="="
         android:textSize="0dp"
-        android:onClick="onOperationClick"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toEndOf="@+id/btnDot"
-        app:layout_constraintTop_toTopOf="@+id/btnDot" />
+        app:layout_constraintTop_toTopOf="@+id/btnDot"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/divider"
@@ -305,7 +309,9 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="24dp"
         android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/btnAC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operationField" />
