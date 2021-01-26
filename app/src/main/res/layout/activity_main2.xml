@@ -21,14 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
+        android:hint="Waga"
         android:inputType="numberDecimal"
-        android:text="Waga"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <EditText
         android:id="@+id/Mililitry"
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:ems="12"
         android:inputType="numberDecimal"
-        android:text="Mililitry"
+        android:hint="Mililitry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -49,22 +48,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
+        android:hint="Moc alkoholu (%)"
         android:inputType="numberDecimal"
-        android:text="Moc alkoholu (%)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+        app:layout_constraintVertical_bias="0.092" />
 
-    <EditText
+    <TextView
         android:id="@+id/Plec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
         android:inputType="numberDecimal"
         android:text="Twoja plec"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -78,7 +77,7 @@
         android:layout_height="wrap_content"
         android:ems="12"
         android:inputType="numberDecimal"
-        android:text="Czas od zakończenia picia"
+        android:hint="Czas od zakończenia picia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -86,19 +85,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.202" />
 
-    <EditText
+    <TextView
         android:id="@+id/Wynik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
         android:inputType="numberDecimal"
-        android:text="Wynik"
+        android:text="Twoje promile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.721" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kobieta"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Plec" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:text="Mężczyzna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Plec" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
