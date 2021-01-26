@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity2 extends AppCompatActivity {
 
     EditText Waga, Mililitry, Procent, Czas;
@@ -46,14 +48,11 @@ public class MainActivity2 extends AppCompatActivity {
                 if(checkBox.isChecked()){
                     WagaInt = WagaInt * 0.6;
                     promile_usuwane = 0.11;
-                    Log.d("test", "checkbox 1");
                 }
                 if(checkBox2.isChecked()){
                     WagaInt = WagaInt * 0.7;
                     promile_usuwane = 0.13;
-                    Log.d("test", "checkbox 2");
                 }
-
 
 
                 zmienna = zmienna / WagaInt;
@@ -61,11 +60,31 @@ public class MainActivity2 extends AppCompatActivity {
                 promile_usuwane = promile_usuwane * CzasInt;
                 zmienna = zmienna - promile_usuwane;
 
-                Wynik.setText(String.valueOf(zmienna));
+                DecimalFormat df = new DecimalFormat("###.#");
 
+                Wynik.setText(String.valueOf(df.format(zmienna)));
+            }
+        });
+
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkBox.isChecked()){
+                    checkBox2.setChecked(false);
+                }
+            }
+        });
+
+        checkBox2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkBox2.isChecked()){
+                    checkBox.setChecked(false);
+                }
             }
         });
     }
+
     public void init(){
         Waga = findViewById(R.id.Waga);
         Procent = findViewById(R.id.Procent);
@@ -75,8 +94,5 @@ public class MainActivity2 extends AppCompatActivity {
         Wynik = findViewById(R.id.Wynik);
         checkBox = findViewById(R.id.checkBox);
         checkBox2 = findViewById(R.id.checkBox2);
-
-
-
     }
 }

@@ -91,13 +91,15 @@
         android:layout_height="wrap_content"
         android:ems="15"
         android:inputType="numberDecimal"
-        android:text="Twoje promile"
+        android:text=""
+        android:gravity="center"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.741" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -119,6 +121,19 @@
         android:text="Mężczyzna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Plec" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twoje promile alkoholu we krwi:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/Wynik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Waga"
+        app:layout_constraintVertical_bias="0.809" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
