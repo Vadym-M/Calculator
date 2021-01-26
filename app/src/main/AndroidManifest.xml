@@ -8,8 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".kalkulator_kcal"></activity>
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".CalcPlac"></activity>
+        <activity android:name=".CalcWalut" />
+        <activity android:name=".kalkulator_kcal" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity">
             <intent-filter>

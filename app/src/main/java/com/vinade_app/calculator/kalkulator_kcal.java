@@ -17,7 +17,7 @@ public class kalkulator_kcal extends AppCompatActivity {
         Button tekstBtn = findViewById(R.id.button);
         final TextView Wynik =  findViewById(R.id.Wynik);
 
-        tekstBtn.setOnClickListener(new View.OnClickListener() {
+     /*   tekstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -34,5 +34,7 @@ public class kalkulator_kcal extends AppCompatActivity {
 
             }
         });
+
+      */
     }
 }
