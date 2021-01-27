@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -34,13 +38,34 @@ public class CalcWalut extends AppCompatActivity {
     Thread thread;
     ListView listView;
     ArrayList<Waluta> waluty;
-    TextView time;
+    TextView time, show_kwota;
     String timeParser;
+    Spinner spinner_mam, spinner_otrzymam;
+    EditText kwota;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_walut);
+        spinner_mam = findViewById(R.id.spinner_mam);
+        spinner_otrzymam = findViewById(R.id.spinner_otrzymam);
+        kwota = findViewById(R.id.kwota);
+        kwota.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                show_kwota = findViewById(R.id.show_kwota);
+                show_kwota.setText(kwota.getText());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
      run = new Runnable() {
@@ -99,9 +124,16 @@ public class CalcWalut extends AppCompatActivity {
         }
     }
         private void Init(){
-
+           String[] adapterString = new String[waluty.size()];
+           for(int i = 0 ; i< waluty.size(); i++)
+           {
+               adapterString[i]= waluty.get(i).getCurrency();
+           }
+           ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, adapterString);
+           spinner_otrzymam.setAdapter(adapter);
+           spinner_otrzymam.
+           spinner_mam.setAdapter(adapter);
             Log.d("DEBUG", " TIME CHECK -->"+ timeParser);
-
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.currency_fragment);
         bottomSheetDialog.show();
