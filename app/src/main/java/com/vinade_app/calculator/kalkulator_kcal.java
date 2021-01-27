@@ -29,7 +29,7 @@ public class kalkulator_kcal extends AppCompatActivity {
         checkBox2_kcal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkBox2_kcal.isChecked()) {
+                if(checkBox2_kcal.isChecked()){
                     checkBox.setChecked(false);
                 }
             }
