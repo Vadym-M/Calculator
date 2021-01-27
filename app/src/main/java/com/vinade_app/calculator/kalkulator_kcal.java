@@ -17,24 +17,23 @@ public class kalkulator_kcal extends AppCompatActivity {
         Button tekstBtn = findViewById(R.id.button);
         final TextView Wynik =  findViewById(R.id.Wynik);
 
-     /*   tekstBtn.setOnClickListener(new View.OnClickListener() {
+        checkBox1_kcal.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                EditText WagaPole= findViewById(R.id.Waga);
-                String WagaString=WagaPole.getText().toString();
-
-                EditText MililitryPole = findViewById(R.id.Mililitry);
-                String MililitryString = MililitryPole.getText().toString();
-
-                Integer Mililitry = Integer.parseInt(MililitryString);
-                Integer Waga = Integer.parseInt(WagaString);
-
-                Wynik.setText(Mililitry*Waga);
-
+            public void onClick(View v) {
+                if(checkBox1_kcal.isChecked()){
+                    checkBox2.setChecked(false);
+                }
             }
         });
 
-      */
+        checkBox2_kcal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkBox2_kcal.isChecked()){
+                    checkBox.setChecked(false);
+                }
+            }
+        });
+
     }
 }
