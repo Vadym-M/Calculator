@@ -1,6 +1,7 @@
 package com.vinade_app.calculator;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +13,24 @@ import java.util.ArrayList;
 
 public class MyAdapter extends BaseAdapter {
 
-    ArrayList<Waluta> data;
+    ArrayList<Waluta> data1 = new ArrayList<>();
+    ArrayList<Waluta> data = new ArrayList<>();
+    ArrayList<Waluta> data2 = new ArrayList<>();
     Context context;
 
     public MyAdapter(Context context, ArrayList<Waluta> waluta) {
         if (waluta != null) {
             data = waluta;
+           for(int i = 0 ;i < data.size();i++)
+           {
+             if(i < data.size()/2)
+             {
+                 data1.add(data.get(i));
+             } else
+                 {
+                     data2.add(data.get(i));
+                 }
+           }
             Log.d("DEBUG", "ok");
         }
         this.context = context;
@@ -26,13 +39,13 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return 5;
+        return data2.size();
     }
 
     @Override
     public Object getItem(int num) {
         // TODO Auto-generated method stub
-        return data.get(num);
+        return data2.get(num);
     }
 
     @Override
@@ -46,9 +59,26 @@ public class MyAdapter extends BaseAdapter {
         if (someView == null) {
             someView = inflater.inflate(R.layout.currency_item, arg2, false);
         }
-        TextView header = (TextView) someView.findViewById(R.id.textView2);
-        TextView subHeader = (TextView) someView.findViewById(R.id.textView3);
-        header.setText(data.get(i).getRate());
-        subHeader.setText(data.get(i).getCurrency());
+        TextView currency1 = (TextView) someView.findViewById(R.id.currency1);
+        TextView currency2 = (TextView) someView.findViewById(R.id.currency2);
+        TextView rate1 = (TextView) someView.findViewById(R.id.rate1);
+        TextView rate2 = (TextView) someView.findViewById(R.id.rate2);
+
+            rate1.setText(data1.get(i).getRate());
+
+            currency1.setText(data1.get(i).getCurrency());
+            if(data1.get(i).getCurrency().equals("PLN"))
+            {
+                currency1.setTextColor(Color.GREEN);
+            }else
+                {
+                    currency1.setTextColor(Color.BLACK);
+                    currency2.setTextColor(Color.BLACK);
+
+                }
+            rate2.setText(data2.get(i).getRate());
+            currency2.setText(data2.get(i).getCurrency());
+
+        Log.d("DEBUG", "I HAVE TO SEE I ___>" + i);
         return someView;
     }}

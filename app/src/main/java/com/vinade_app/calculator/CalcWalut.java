@@ -34,11 +34,13 @@ public class CalcWalut extends AppCompatActivity {
     Thread thread;
     ListView listView;
     ArrayList<Waluta> waluty;
+    TextView time;
+    String timeParser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_walut);
-        listView = findViewById(R.id.listView);
+
 
 
      run = new Runnable() {
@@ -51,12 +53,7 @@ public class CalcWalut extends AppCompatActivity {
                  if(parserWalut.parse(content))
                  {
                      waluty = parserWalut.getWaluty();
-                     for(int i = 0; i < parserWalut.getWaluty().size(); i++ )
-                     {
-                        // Log.d("DEBUG", "MSG --> "+ i + " Currency ->" + parserWalut.getWaluty().get(i).getCurrency() + " Rate:" + parserWalut.getWaluty().get(i).getRate() );
-
-                     }
-                    // Log.d("DEBUG", " TIME -->>"  + parserWalut.getTime());
+                     timeParser = parserWalut.getTime();
 
                  }
              } catch (IOException e) {
@@ -102,12 +99,17 @@ public class CalcWalut extends AppCompatActivity {
         }
     }
         private void Init(){
+
+            Log.d("DEBUG", " TIME CHECK -->"+ timeParser);
+
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.currency_fragment);
         bottomSheetDialog.show();
-        View view = findViewById(R.id.bottom_fragment);
-            MyAdapter myAdapter = new MyAdapter(view.getContext(), waluty);
-            listView.setAdapter(myAdapter);
 
+            MyAdapter myAdapter = new MyAdapter(bottomSheetDialog.getContext(), waluty);
+           listView = bottomSheetDialog.findViewById(R.id.listView);
+            time = bottomSheetDialog.findViewById(R.id.textTime);
+            listView.setAdapter(myAdapter);
+            time.setText("Data: "+ timeParser);
         }
 }
