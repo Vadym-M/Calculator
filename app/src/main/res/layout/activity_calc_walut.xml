@@ -107,23 +107,24 @@
         android:id="@+id/show_kwota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="96dp"
-        android:text="100 PLN"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="100dp"
+        android:text="100"
         android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_mam" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/wynik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="21.99 EUR"
+        android:layout_marginTop="4dp"
+        android:text="21.99 "
         android:textColor="@color/black"
         android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="@+id/show_kwota" />
 
@@ -131,11 +132,35 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="100dp"
         android:text="="
         android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/show_kwota"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_mam" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLN"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/show_kwota"
         app:layout_constraintTop_toTopOf="@+id/show_kwota" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="EUR"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wynik" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

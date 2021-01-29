@@ -38,7 +38,7 @@ public class CalcWalut extends AppCompatActivity {
     Thread thread;
     ListView listView;
     ArrayList<Waluta> waluty;
-    TextView time, show_kwota;
+    TextView time, show_kwota, wynik;
     String timeParser;
     Spinner spinner_mam, spinner_otrzymam;
     EditText kwota;
@@ -46,9 +46,7 @@ public class CalcWalut extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_walut);
-        spinner_mam = findViewById(R.id.spinner_mam);
-        spinner_otrzymam = findViewById(R.id.spinner_otrzymam);
-        kwota = findViewById(R.id.kwota);
+        Init();
         kwota.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -94,7 +92,9 @@ public class CalcWalut extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Init();
+
+        SpinnerInit();
+        BottomDialogInit();
     }
     private String download(String urlPath) throws IOException {
         StringBuilder xmlResult = new StringBuilder();
@@ -124,23 +124,34 @@ public class CalcWalut extends AppCompatActivity {
         }
     }
         private void Init(){
-           String[] adapterString = new String[waluty.size()];
-           for(int i = 0 ; i< waluty.size(); i++)
-           {
-               adapterString[i]= waluty.get(i).getCurrency();
-           }
-           ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, adapterString);
-           spinner_otrzymam.setAdapter(adapter);
-           spinner_mam.setAdapter(adapter);
-            Log.d("DEBUG", " TIME CHECK -->"+ timeParser);
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        bottomSheetDialog.setContentView(R.layout.currency_fragment);
-        bottomSheetDialog.show();
+            spinner_mam = findViewById(R.id.spinner_mam);
+            spinner_otrzymam = findViewById(R.id.spinner_otrzymam);
+            kwota = findViewById(R.id.kwota);
 
+
+        }
+
+        void BottomDialogInit()
+        {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+            bottomSheetDialog.setContentView(R.layout.currency_fragment);
+            bottomSheetDialog.show();
             MyAdapter myAdapter = new MyAdapter(bottomSheetDialog.getContext(), waluty);
-           listView = bottomSheetDialog.findViewById(R.id.listView);
+            listView = bottomSheetDialog.findViewById(R.id.listView);
             time = bottomSheetDialog.findViewById(R.id.textTime);
             listView.setAdapter(myAdapter);
             time.setText("Data: "+ timeParser);
+        }
+        void SpinnerInit()
+        {
+            String[] adapterString = new String[waluty.size()];
+            for(int i = 0 ; i< waluty.size(); i++)
+            {
+                adapterString[i]= waluty.get(i).getCurrency();
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, adapterString);
+            spinner_otrzymam.setAdapter(adapter);
+            spinner_mam.setAdapter(adapter);
+            Log.d("DEBUG", " TIME CHECK -->"+ timeParser);
         }
 }
