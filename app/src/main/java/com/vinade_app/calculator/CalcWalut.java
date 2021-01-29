@@ -131,7 +131,6 @@ public class CalcWalut extends AppCompatActivity {
            }
            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, adapterString);
            spinner_otrzymam.setAdapter(adapter);
-           spinner_otrzymam.
            spinner_mam.setAdapter(adapter);
             Log.d("DEBUG", " TIME CHECK -->"+ timeParser);
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
