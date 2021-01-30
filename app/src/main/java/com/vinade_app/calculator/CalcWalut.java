@@ -1,25 +1,16 @@
 package com.vinade_app.calculator;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -144,6 +135,7 @@ public class CalcWalut extends AppCompatActivity {
         }
         void SpinnerInit()
         {
+            Log.d("DEBUG", "ILOSC (WALUTY)" + waluty.size());
             String[] adapterString = new String[waluty.size()];
             for(int i = 0 ; i< waluty.size(); i++)
             {
