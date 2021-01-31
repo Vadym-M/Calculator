@@ -31,7 +31,7 @@ public class MyAdapter extends BaseAdapter {
                      data2.add(data.get(i));
                  }
            }
-            Log.d("DEBUG", "ok");
+
         }
         this.context = context;
     }
@@ -79,6 +79,5 @@ public class MyAdapter extends BaseAdapter {
             rate2.setText(data2.get(i).getRate());
             currency2.setText(data2.get(i).getCurrency());
 
-        Log.d("DEBUG", "I HAVE TO SEE I ___>" + i);
         return someView;
     }}

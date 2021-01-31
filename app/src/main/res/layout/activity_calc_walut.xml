@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".CalcWalut">
 
 
@@ -25,6 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:maxLength="6"
         android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -36,7 +38,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="136dp"
         android:text="Kwota:"
-
+        android:textSize="20dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -46,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mam:"
+        android:textSize="20dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
         app:layout_constraintHorizontal_bias="0.45"
@@ -53,43 +56,38 @@
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/tabel_kurs"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:text="Oblicz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_mam" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Button"
+        android:layout_marginBottom="64dp"
+        android:background="@android:color/white"
+        android:text="Zobacz tabelę kursów ECB"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/text_info"
+        app:layout_constraintVertical_bias="0.662" />
 
     <Spinner
         android:id="@+id/spinner_mam"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/spinner_otrzymam"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toEndOf="@+id/kwota"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Spinner
         android:id="@+id/spinner_otrzymam"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -97,70 +95,105 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="Chce otrzymac:"
+        android:layout_marginEnd="16dp"
+        android:text="Chcę otrzymać:"
+        android:gravity="center"
         android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/show_kwota"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="100dp"
-        android:text="100"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="42dp"
+        android:background="@color/color_wynik"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/text_info"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_mam" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_mam"
+        app:layout_constraintVertical_bias="1.0">
 
-    <TextView
-        android:id="@+id/wynik"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="21.99 "
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.969"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/show_kwota" />
+        <TextView
+            android:id="@+id/show_kwota"
+            android:layout_width="145dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="100"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="100dp"
-        android:text="="
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/show_kwota"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_mam" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="="
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/wynik"
+            android:layout_width="145dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="21.99 "
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PLN"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/show_kwota"
-        app:layout_constraintTop_toTopOf="@+id/show_kwota" />
+        android:layout_marginTop="16dp"
+        android:text="Kalkulator walutowy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/swap_btn"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/swap_icon"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_otrzymam"
+        app:layout_constraintStart_toEndOf="@+id/spinner_mam"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/text_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="EUR"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+        android:layout_marginBottom="244dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wynik" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
