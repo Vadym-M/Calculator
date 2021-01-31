@@ -90,7 +90,7 @@ public class kalkulator_kcal extends AppCompatActivity {
             public void onClick(View view) {
                 double Waga=Integer.parseInt(WagaKal.getText().toString());
 
-                double WynikInt = Waga * 24 * bmr * aktywnosc[0];
+                double WynikInt = Waga * 24 * bmr[0] * aktywnosc[0];
 
                 Wynik.setText(String.valueOf(WynikInt));
             }
