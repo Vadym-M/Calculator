@@ -6,4 +6,6 @@
     <color name="colorPurple">#9C27B0</color>
     <color name="colorDeepPurple">#4A148C</color>
     <color name="black">#000000</color>
+    <color name="color_wynik">#EFEFEF</color>
+    <color name="blue">#0A73C6</color>
 </resources>
