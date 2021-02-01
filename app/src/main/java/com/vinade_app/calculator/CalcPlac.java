@@ -22,6 +22,9 @@ String[] spin_rok_zycia ={"TAK","NIE"};
 String[] spin_pit ={"TAK","NIE"};
 String[] spin_kup ={"250","300"};
 String[] spin_chorobowe ={"TAK","NIE"};
+DecimalFormat df = new DecimalFormat("###.##");
+double test;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,125 +52,109 @@ String[] spin_chorobowe ={"TAK","NIE"};
 //            wynik.setText(String.valueOf(test_2));
 //        }
 
+
+
         if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)-43.76) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)-43.76) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test)));
-
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test2 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test2)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test3 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)-43.76) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)-43.76) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test3)));
-
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test4 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)-43.76) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)-43.76) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test4)));
-
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("NIE")) {
 
-            double test15 = 88.74 / 100 * Integer.parseInt(brutto.getText().toString()) - (88.74 / 100 * Integer.parseInt(brutto.getText().toString()) * 9 / 100) - ((((Math.round(88.74 / 100 * Integer.parseInt(brutto.getText().toString()) - 300)) * 17 / 100) - 43.76) - (Math.round(88.74 / 100 * Integer.parseInt(brutto.getText().toString()) * 7.75 / 100)));
+             test = 88.74 / 100 * Integer.parseInt(brutto.getText().toString()) - (88.74 / 100 * Integer.parseInt(brutto.getText().toString()) * 9 / 100) - ((((Math.round(88.74 / 100 * Integer.parseInt(brutto.getText().toString()) - 300)) * 17 / 100) - 43.76) - (Math.round(88.74 / 100 * Integer.parseInt(brutto.getText().toString()) * 7.75 / 100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test15)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test5 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)) - (Math.round(86.29/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test5)));
-
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test6 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+            test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 300))*17/100)) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test6)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test7 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100) - ((((Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) - 250))*17/100)) - (Math.round(88.74/100 * Integer.parseInt(brutto.getText().toString()) * 7.75/100)));
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test7)));
+            pokWyn();
 
         } else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test8 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test8)));
-
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test9 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+            test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test9)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test10 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test10)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test11 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test11)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("TAK")){
 
-            double test12 = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+            test = 86.29/100 * Integer.parseInt(brutto.getText().toString()) - (86.29/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test12)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test13 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test13)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("NIE") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test14 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test14)));
+            pokWyn();
 
         }else if(rok_zycia.getSelectedItem().equals("NIE") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("300") && chorobowe.getSelectedItem().equals("NIE")){
 
-            double test16 = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
+             test = 88.74/100 * Integer.parseInt(brutto.getText().toString()) - (88.74/100 * Integer.parseInt(brutto.getText().toString()) * 9/100);
 
-            DecimalFormat df = new DecimalFormat("###.##");
-            wynik.setText(String.valueOf(df.format(test16)));
-
+            pokWyn();
         }
 
+    }
+
+    void pokWyn(){
+        wynik.setText(String.valueOf(df.format(test)));
     }
 
     void init(){
