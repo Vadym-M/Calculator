@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 public class CalcPlac extends AppCompatActivity {
 
 EditText brutto, skl_wypad;
-TextView wynik;
+TextView wynik, wynik2;
 Button gozik;
 Spinner rok_zycia, pit, kup, chorobowe;
 String[] spin_rok_zycia ={"TAK","NIE"};
@@ -24,6 +24,7 @@ String[] spin_kup ={"250","300"};
 String[] spin_chorobowe ={"TAK","NIE"};
 DecimalFormat df = new DecimalFormat("###.##");
 double test;
+double test2;
 
 
     @Override
@@ -37,22 +38,13 @@ double test;
             @Override
             public void onClick(View v) {
                 Obliczenia();
+                kosztPrac();
             }
+
         });
     }
 
     void Obliczenia(){
-
-//        if(rok_zycia.getSelectedItem().equals("TAK")){
-//
-//            int test = Integer.parseInt(brutto.getText().toString()) - 500;
-//            wynik.setText(String.valueOf(test));
-//        }else{
-//            int test_2 = Integer.parseInt(brutto.getText().toString()) - 700;
-//            wynik.setText(String.valueOf(test_2));
-//        }
-
-
 
         if(rok_zycia.getSelectedItem().equals("TAK") && pit.getSelectedItem().equals("TAK") && kup.getSelectedItem().equals("250") && chorobowe.getSelectedItem().equals("TAK")){
 
@@ -154,13 +146,20 @@ double test;
     }
 
     void pokWyn(){
-        wynik.setText(String.valueOf(df.format(test)));
+        wynik.setText(String.valueOf(df.format(test)) + " zł");
     }
+    void pokWyn2(){
+        wynik2.setText(String.valueOf(df.format(test2)) + " zł") ;
+    }
+
+    void kosztPrac(){ test2 = Double.valueOf(brutto.getText().toString())  + Double.valueOf(brutto.getText().toString()) * 18.81/100 + Double.valueOf(brutto.getText().toString()) * Double.valueOf(skl_wypad.getText().toString())/100;
+    pokWyn2();}
 
     void init(){
         brutto = findViewById(R.id.wynagrodzenie_brutto);
         skl_wypad = findViewById(R.id.skladka_wypadkowa);
         wynik = findViewById(R.id.textView18);
+        wynik2 = findViewById(R.id.textView8);
         rok_zycia = findViewById(R.id.rok_zycia);
         pit = findViewById(R.id.pit);
         kup = findViewById(R.id.kup);
